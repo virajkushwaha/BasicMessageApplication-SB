@@ -30,4 +30,10 @@ public class MessageAppController {
     public String printingJsonData(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+
+    // UC 5: PUT Request with Mixed Parameters
+    @PutMapping("/put/{firstName}")
+    public String sayHelloWithPut(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
